@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Shinobi HUD</title>
+    <!-- CACHE-BUSTING: suba o numero (v5.0 -> v5.1...) a cada deploy -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5.0">
+</head>
+<body>
+    <div class="hud-container">
+        <img src="hudnova.png?v=5.0" class="hud-bg" alt="Shinobi HUD">
+
+        <!-- ============ HP: barra + texto ============ -->
+        <div class="status-text-box" id="hp-text-slot" style="top: 85.03px; left: -64px;">
+            <span id="hp-text">100/100</span>
+        </div>
+        <div class="bar-slot hp-slot" id="hp-slot"
+             style="top: 79px; left: 3px; width: 416px; height: 28px;
+                    clip-path: polygon(17px 0%, calc(100% - 15px) 0%, calc(100% - 23px) 100%, 37px 100%);"
+             data-tl="17" data-bl="37" data-tr="15" data-br="23" data-fill="left">
+            <div id="hp-bar" class="bar-fill health-green" style="width: 100%;"></div>
+        </div>
+
+        <!-- ============ ENERGIA/CHAKRA: barra + texto ============ -->
+        <div class="status-text-box" id="chakra-text-slot" style="top: 114.64px; left: 20px;">
+            <span id="chakra-text">7000/7000</span>
+        </div>
+        <div class="bar-slot chakra-slot" id="chakra-slot"
+             style="top: 111.25px; left: 81px; width: 302px; height: 20px;
+                    clip-path: polygon(13px 0%, calc(100% - 14px) 0%, calc(100% + 6px) 100%, 29px 100%);"
+             data-tl="13" data-bl="29" data-tr="14" data-br="-6" data-fill="left">
+            <div id="chakra-bar" class="bar-fill chakra-blue" style="width: 100%;"></div>
+        </div>
+
+        <!-- ============ STAMINA: barra ============ -->
+        <div class="bar-slot stamina-slot" id="stamina-slot"
+             style="top: 136px; left: 157px; width: 169px; height: 19px;
+                    clip-path: polygon(9px 0%, calc(100% - 15px) 0%, calc(100% + 2px) 100%, 29px 100%);"
+             data-tl="9" data-bl="29" data-tr="15" data-br="-2" data-fill="left">
+            <div id="stamina-bar" class="bar-fill stamina-gray" style="width: 100%;"></div>
+        </div>
+
+        <!-- ============ NÍVEL ============ -->
+        <div class="level-box" id="level-slot" style="top: 98.44px; left: 536.20px;">
+            <span id="level-text">1</span>
+        </div>
+    </div>
+
+    <!-- CACHE-BUSTING: mesma versao do CSS -->
+    <script src="script.js?v=5.0"></script>
+</body>
+</html>

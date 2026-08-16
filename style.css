@@ -1,0 +1,103 @@
+/* ============================================================
+   SHINOBI HUD - Blindagem Anti-Tela Preta (OBRIGATORIO p/ CEF)
+   ============================================================ */
+html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    overflow: hidden;
+}
+
+body {
+    user-select: none;
+}
+
+/* ============================================================
+   CONTAINER BASE: 600px, ancorado no canto superior direito
+   ============================================================ */
+.hud-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 600px !important;
+    height: auto;
+    transform-origin: top right;   /* ancora do UI scaling */
+    will-change: transform;        /* composicao via GPU (CEF) */
+}
+
+.hud-bg {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ============================================================
+   BARRAS - recortes via clip-path, preenchimento interno
+   ============================================================ */
+.bar-slot {
+    position: absolute;
+    z-index: 11;
+    overflow: hidden;
+}
+
+/* FLUIDEZ: transicao suave no preenchimento (+ cor de status) */
+.bar-fill {
+    height: 100%;
+    width: 100%;
+    transition: width 0.3s ease-out, background-color 0.3s ease;
+    transform-origin: left center;
+}
+
+.bar-slot .fill-right { transform-origin: right center; }
+
+/* ============================================================
+   TEXTOS DE VALOR (HP / Energia) e NÍVEL
+   ============================================================ */
+.status-text-box {
+    position: absolute;
+    z-index: 15;
+}
+
+.status-text-box span {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000, 0 0 4px #000;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.level-box {
+    position: absolute;
+    width: 45px;
+    height: 25px;
+    z-index: 12;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#level-text {
+    font-family: 'Bangers', cursive;
+    color: #ffffff;
+    font-size: 26px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 0px #000, -1px -1px 0px #000;
+    pointer-events: none;
+}
+
+/* ============================================================
+   CORES DE STATUS
+   ============================================================ */
+.health-green  { background: linear-gradient(180deg, #2ecc71 0%, #27ae60 100%); }
+.health-orange { background: linear-gradient(180deg, #f39c12 0%, #d35400 100%); }
+.health-red    { background: linear-gradient(180deg, #e74c3c 0%, #c0392b 100%); }
+
+.chakra-blue   { background: linear-gradient(180deg, #00d2ff 0%, #0077ff 100%); }
+.stamina-gray  { background: linear-gradient(180deg, #f5f6fa 0%, #bdc3c7 100%); }
