@@ -1,15 +1,20 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>Shinobi HUD</title>
     <!-- CACHE-BUSTING: suba o numero (v5.0 -> v5.1...) a cada deploy -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5.0">
+    <link rel="stylesheet" href="style.css?v=5.1">
 </head>
 <body>
     <div class="hud-container">
         <img src="hudnova.png?v=5.0" class="hud-bg" alt="Shinobi HUD">
+
+        <!-- ============ NOME DO JOGADOR (Área das Chamas Roxas) ============ -->
+        <div class="player-name-box" id="player-name-slot" style="top: 35px; left: 120px;">
+            <span id="player-name">Carregando...</span>
+        </div>
 
         <!-- ============ HP: barra + texto ============ -->
         <div class="status-text-box" id="hp-text-slot" style="top: 85.03px; left: -64px;">
@@ -48,6 +53,6 @@
     </div>
 
     <!-- CACHE-BUSTING: mesma versao do CSS -->
-    <script src="script.js?v=5.0"></script>
+    <script src="script.js?v=5.1"></script>
 </body>
 </html>
