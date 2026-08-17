@@ -37,25 +37,26 @@ body {
 }
 
 /* ============================================================
-   NOME DO JOGADOR (Encaixado nas chamas)
+   NOME DO JOGADOR (Posicionamento Ajustado)
    ============================================================ */
 .player-name-box {
     position: absolute;
-    top: 72px;       /* Desceu para alinhar na altura certa */
-    left: 230px;     /* Puxou para a direita, em cima da faixa metálica */
+    top: 15px;       /* Posição vertical exata na faixa superior */
+    left: 280px;     /* Posição horizontal alinhada nas chamas */
     z-index: 15;
 }
 
 #player-name {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
-    font-size: 15px; /* Tamanho proporcional para caber na faixa */
+    font-size: 16px;
     color: #ffffff;
-    text-shadow: 2px 2px 3px #000000, 0 0 5px rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 4px #000000, 0 0 6px rgba(0, 0, 0, 0.9);
     white-space: nowrap;
     pointer-events: none;
     letter-spacing: 0.5px;
 }
+
 /* ============================================================
    BARRAS - recortes via clip-path, preenchimento interno
    ============================================================ */
