@@ -37,6 +37,25 @@ body {
 }
 
 /* ============================================================
+   NOME DO JOGADOR (Área das Chamas Roxas)
+   ============================================================ */
+.player-name-box {
+    position: absolute;
+    z-index: 15;
+}
+
+#player-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000, 0 0 6px rgba(0, 0, 0, 0.9), -1px -1px 2px #000000;
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
    BARRAS - recortes via clip-path, preenchimento interno
    ============================================================ */
 .bar-slot {
