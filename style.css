@@ -37,24 +37,25 @@ body {
 }
 
 /* ============================================================
-   NOME DO JOGADOR (Área das Chamas Roxas)
+   NOME DO JOGADOR (Encaixado nas chamas)
    ============================================================ */
 .player-name-box {
     position: absolute;
+    top: 72px;       /* Desceu para alinhar na altura certa */
+    left: 230px;     /* Puxou para a direita, em cima da faixa metálica */
     z-index: 15;
 }
 
 #player-name {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 15px; /* Tamanho proporcional para caber na faixa */
     color: #ffffff;
-    text-shadow: 2px 2px 4px #000000, 0 0 6px rgba(0, 0, 0, 0.9), -1px -1px 2px #000000;
+    text-shadow: 2px 2px 3px #000000, 0 0 5px rgba(0, 0, 0, 0.9);
     white-space: nowrap;
     pointer-events: none;
     letter-spacing: 0.5px;
 }
-
 /* ============================================================
    BARRAS - recortes via clip-path, preenchimento interno
    ============================================================ */
