@@ -1,10 +1,15 @@
 /* ==========================================================================
    SHINOBI HUD - FRONT-END PURA (HTML/CSS/JS via CEF)
    Escopo isolado: apenas a interface visual. Sem gameplay no JS.
-   Protocolo com o Pawn: evento "shinobi:updateHud" (7 valores inteiros)
+   Protocolo com o Pawn: evento "shinobi:updateHud" (nome do player + 7 valores inteiros)
    ========================================================================== */
 
-function updateHud(hp, maxHp = 100, chakra, maxChakra = 7000, stamina, maxStamina = 100, level = 1) {
+function updateHud(playerName, hp, maxHp = 100, chakra, maxChakra = 7000, stamina, maxStamina = 100, level = 1) {
+    /* NOME DO JOGADOR */
+    if (playerName) {
+        document.getElementById('player-name').innerText = playerName;
+    }
+
     /* HP: barra + cor de estado (verde >50%, laranja >25%, vermelho) */
     const hpPercent = (Math.max(0, hp) / Math.max(1, maxHp)) * 100;
     const hpBar = document.getElementById('hp-bar');
@@ -53,8 +58,9 @@ window.addEventListener('resize', applyUIScale);
 if (typeof cef !== 'undefined') {
     cef.emit('game:hud:setComponentVisible', 'interface', false);
 
-    cef.on('shinobi:updateHud', (hp, maxHp, chakra, maxChakra, stamina, maxStamina, level) => {
-        updateHud(hp, maxHp, chakra, maxChakra, stamina, maxStamina, level);
+    /* Atualizado para escutar o nome do jogador na primeira posição da bridge */
+    cef.on('shinobi:updateHud', (playerName, hp, maxHp, chakra, maxChakra, stamina, maxStamina, level) => {
+        updateHud(playerName, hp, maxHp, chakra, maxChakra, stamina, maxStamina, level);
     });
 
     if (typeof cef.setTransparent === 'function') cef.setTransparent(1);
